@@ -1,0 +1,268 @@
+body {
+  background-color: lightskyblue;
+}
+  
+h1 {
+  text-align: center;
+}
+  
+label {
+  margin-right: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+  
+input[type="text"] {
+  background-color: #F5F5F5;
+  padding: 5px;
+  width: 350px;
+  margin-right: 10px;;
+}
+  
+button {
+  background-color: #008CBA;
+  color: white;
+  border: black 2px solid;
+  padding: 5px 10px;
+  cursor: pointer;
+  width: 100px;
+}
+  
+button:hover {
+  background-color: #0077B5;
+}
+  
+ul {
+  list-style: none;
+  margin: 20px 0;
+  padding: 0;
+}
+  
+#assignment-list li{
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px;
+  border: #008CBA 4px solid;
+}
+
+#assignment-list button{
+  border: black 2px solid;
+  margin-right: 5px;
+}
+
+.edit-form-submit-button{
+  background-color: rgb(2, 174, 2);
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 100px;
+}
+.edit-form-submit-button:hover{
+  background-color: green;
+}
+  
+li:hover {
+  background-color: #f2f2f2;
+}
+  
+#random-button {
+  width:auto;
+  display: block;
+  margin: 20px auto;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+  
+#random-button:hover {
+  background-color: #3e8e41;
+}
+
+#addArea{
+  display: flex;
+  flex-wrap:nowrap;
+  justify-content: center;
+  margin: 50px;
+  width: auto;
+}
+#addArea label{
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+  margin-right:10px;
+}
+
+#random-assignment-list li{
+  background-color: #008CBA;
+  color: white;
+  border: 3px solid #0077B5;
+  padding: 10px;
+  margin: 10px;
+  margin-left: 400px;
+  margin-right: 400px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.delete-button{
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-top:10px;
+}
+
+.delete-button:hover{
+  background-color: #e53935;
+}
+
+.assignment-name{
+  font-size: 30px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.edit-form-area{
+  margin: 20px 0;
+}
+
+.edit-form-area label{
+  display: inline-block;
+  text-align: left;
+  color: purple;
+  margin-right:10px;
+}
+
+.edit-form-area input{
+  background-color: #F5F5F5;
+  margin-right:50px;
+  margin-bottom: 10px;
+}
+
+.assignment-course{
+  font-size:20px;
+
+}
+
+.assignment-etc{
+  font-size: 20px;
+}
+
+.assignment-due-date{
+  font-size: 20px;
+}
+
+.assignment-due-time{
+  font-size: 20px;
+}
+#login-area{
+  display: flex;
+  flex-wrap:wrap;
+  width: auto;
+  background-color: white;
+  padding: 50px;
+  margin: 50px;
+  padding-top:0px;
+  border:rgb(188, 188, 188) 4px solid;
+}
+#login-area h2{
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px;
+  color:purple;
+  background-color: rgb(188, 188, 188);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 5px;
+}
+#login-area label{
+  font-size: 20px;
+  font-weight: normal;
+  text-align: left;
+  margin-right:10px;
+}
+#login-area div{
+  margin-top: 5px;
+  width: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: auto;
+  display: flex;
+  flex-wrap:nowrap;
+  justify-content: center;
+  /* background-color: purple; */
+}
+#login-area-{
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+#register-area{
+  display: flex;
+  flex-wrap:wrap;
+  width: auto;
+  background-color: white;
+  padding: 50px;
+  margin: 50px;
+  padding-top:0px;
+  padding-bottom:15px;
+  border:rgb(188, 188, 188) 4px solid;
+}
+#register-area h2{
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px;
+  color:purple;
+  background-color: rgb(188, 188, 188);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 5px;
+}
+#register-area label{
+  font-size: 20px;
+  font-weight: normal;
+  margin-right:10px;
+}
+#register-area div{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: auto;
+  display: flex;
+  flex-wrap:nowrap;
+  justify-content: center;
+  /* background-color: purple; */
+}
+
+#nav-bar{
+  display: flex;
+  flex-wrap:nowrap;
+  justify-content: center;
+  width: auto;
+  background-color: white;
+  padding: 15px;
+  padding-top:15px;
+  border:rgb(188, 188, 188) 4px solid;
+}
+
+#nav-bar button{
+  margin:10px;
+  display:block;
+}
+
+.user-error{
+  background-color:#cc9f9f;
+  color: #db2436;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+}

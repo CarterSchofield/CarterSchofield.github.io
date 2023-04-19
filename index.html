@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body class="container">
+
+        <h1>My Assignment List</h1>
+        <div id="nav-bar">
+            <button onclick=loginScreenAppear() id="login-button">Login</button>
+            <button onclick=registerScreenAppear() id="register-button">Register</button>
+            <!-- <button id="logout-button">Logout</button> -->
+        </div>
+            <div id="register-area" style="display:none">
+                <h2>Register for MyAssignments!</h2>
+                <div class="user-error" id="user-already-exists">User with that email already exists!</div>
+                <div id="register-email-div">
+                    <label for="email-input">Email:</label>
+                    <input type="text" id="email-input" placeholder="Email">
+                </div>
+
+                <div id="register-password-div">
+                    <label for="password-input">Password:</label>
+                    <input type="text" id="password-input" placeholder="Password">
+                </div>
+            <!-- <label for="password-confirm-input">Confirm Password:</label>
+            <input type="text" id="password-confirm-input" placeholder="Confirm Password"> -->
+                <div id="register-first-name-div">
+                    <label for ="first-name-input">First Name:</label>
+                    <input type="text" id="first-name-input" placeholder="First Name">
+                </div>
+                <div id="register-last-name-div">
+                    <label for="last-name-input">Last Name:</label>
+                    <input type="text" id="last-name-input" placeholder="Last Name">
+                </div> 
+                <div id="register-button-div">
+                    <button id="register-user-button">Register</button>
+                </div>
+                <div class="cancel-button">
+                    <button id="cancel-register-button" onclick=cancelRegister()>Cancel</button>
+                </div>
+            </div>
+
+        <div id="login-area" style="display:none">
+            <h2>Login to MyAssignments!</h2>
+            <div class="user-error" id="user-login-unsucessful">Email or password is incorrect!</div>
+            <div id="login-email-div">
+                <label for="email-input-login">Email:</label>
+                <input type="text" id="email-input-login" placeholder="Email">
+            </div>
+            <div id="login-password-div">
+                <label for="password-input-login">Password:</label>
+                <input type="text" id="password-input-login" placeholder="Password">
+            </div>
+            <div id="login-button-div">
+                <button id="login-user-button">Login</button>
+            </div> 
+            <div class="cancel-button">
+                <button id="cancel-login-button" onclick=cancelLogin()>Cancel</button>
+            </div>
+
+        </div>
+        <div id="addArea">
+            <label for="assignment-input">Add an Assignment:</label>
+            <input type="text" id="assignment-name-input" placeholder="Assignment Name">
+            <input type="text" id="course-input" placeholder="Course">
+            <input type="text" id="ETC-input" placeholder="Estimated Time for Completion">
+            <input type="text" id="due-date-input" placeholder="Due Date">
+            <input type="text" id="due-time-input" placeholder="Time Assignment is Due">
+            <button id="submit">Add</button>
+        </div>
+        <ul id="assignment-list"></ul>
+        <button id="random-button">Select Random Assignment</button>
+        <ul id="random-assignment-list"></ul>
+        <script src="app.js"></script>
+    </body>
+</html>
