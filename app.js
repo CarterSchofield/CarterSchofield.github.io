@@ -96,7 +96,7 @@ randomButton.onclick = function (event) {
 function loadAssignmentsFromServer() {
     // Clear assignment list
     assignmentList.innerHTML = '';
-    fetch(SiteURL,'/assignments', {
+    fetch(SiteURL+'/assignments', {
         credentials: 'include'
     }).then(function(response) {
         response.json().then(function(data){
@@ -263,7 +263,7 @@ function createAssignmentOnServer(assignmentName, assignmentCourse, assignmentET
     data += "&due_date= " + encodeURIComponent(assignmentDueDate);
     data += "&due_time= " + encodeURIComponent(assignmentDueTime);
     console.log("sending data to server: ", data);
-    fetch(SiteURL,'/assignments', {
+    fetch(SiteURL+'/assignments', {
         method: 'POST',
         credentials: 'include',
         headers: {
@@ -283,7 +283,7 @@ function createAssignmentOnServer(assignmentName, assignmentCourse, assignmentET
 // Delete assignment from the server/database
 function deleteAssignmentFromServer(assignmentId) {
     console.log("Attempting to delete assignment with id: ", assignmentId);
-    fetch(SiteURL,'/assignments/' + assignmentId, {
+    fetch(SiteURL+'/assignments/' + assignmentId, {
         method: 'DELETE',
         credentials: 'include'
     }).then(function(response) {
@@ -305,7 +305,7 @@ function updateAssignmentOnServer(assignmentId, assignmentName, assignmentCourse
     data += "&due_date= " + encodeURIComponent(assignmentDueDate);
     data += "&due_time= " + encodeURIComponent(assignmentDueTime);
     console.log("sending data to server: ", data);
-    fetch(SiteURL,'/assignments/' + assignmentId, {
+    fetch(SiteURL+'/assignments/' + assignmentId, {
         method: 'PUT',
         credentials: 'include',
         headers: {
@@ -355,7 +355,7 @@ function registerNewUser(userEmail, userPassword, userFirstName, userLastName){
     data += "&firstname= " + encodeURIComponent(userFirstName);
     data += "&lastname= " + encodeURIComponent(userLastName);
     console.log("sending data to server: ", data);
-    fetch(SiteURL,'/users', {
+    fetch(SiteURL+'/users', {
         method: 'POST',
         credentials: 'include',
         headers: {
@@ -404,7 +404,7 @@ function loginUser(userEmail, userPassword){
     var data = "email=" + encodeURIComponent(userEmail);
     data += "&password=" + encodeURIComponent(userPassword);
     console.log("sending data to server: ", data);
-    fetch(SiteURL,'/sessions', {
+    fetch(SiteURL+'/sessions', {
         method: 'POST',
         credentials: 'include',
         headers: {
