@@ -80,6 +80,11 @@ function clearLoginArea() {
     loginArea.style.display = "none";
 }
 
+function clearLoginInput(){
+    userEmailInput.value = '';
+    userPasswordInput.value = '';
+}
+
 
 // Event listener for the add button
 addButton.onclick = function(event) {
@@ -398,7 +403,6 @@ var loginUserPassword = document.getElementById('password-input-login');
 loginUserButton.onclick = function (event) {
     console.log("Login user button was clicked");
     loginUser(loginUserEmail.value, loginUserPassword.value);
-    // clearLoginArea()
 }
 
 function loginUser(userEmail, userPassword){
