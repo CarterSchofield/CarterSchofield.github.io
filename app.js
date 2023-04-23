@@ -300,10 +300,10 @@ function deleteAssignmentFromServer(assignmentId) {
 function updateAssignmentOnServer(assignmentId, assignmentName, assignmentCourse, assignmentETC, assignmentDueDate, assignmentDueTime) {
     console.log("Attempting to update assignment with id: ", assignmentId);
     var data = "name=" + encodeURIComponent(assignmentName);
-    data += "&course= " + encodeURIComponent(assignmentCourse);
-    data += "&estimated_time_completion= " + encodeURIComponent(assignmentETC);
-    data += "&due_date= " + encodeURIComponent(assignmentDueDate);
-    data += "&due_time= " + encodeURIComponent(assignmentDueTime);
+    data += "&course=" + encodeURIComponent(assignmentCourse);
+    data += "&estimated_time_completion=" + encodeURIComponent(assignmentETC);
+    data += "&due_date=" + encodeURIComponent(assignmentDueDate);
+    data += "&due_time=" + encodeURIComponent(assignmentDueTime);
     console.log("sending data to server: ", data);
     fetch(SiteURL+'/assignments/' + assignmentId, {
         method: 'PUT',
@@ -351,9 +351,9 @@ registerUserButton.onclick = function (event) {
 function registerNewUser(userEmail, userPassword, userFirstName, userLastName){
     console.log("Attempting to register a new user", userFirstName, userLastName, "on the server");
     var data = "email=" + encodeURIComponent(userEmail);
-    data += "&password= " + encodeURIComponent(userPassword);
-    data += "&firstname= " + encodeURIComponent(userFirstName);
-    data += "&lastname= " + encodeURIComponent(userLastName);
+    data += "&password=" + encodeURIComponent(userPassword);
+    data += "&firstname=" + encodeURIComponent(userFirstName);
+    data += "&lastname=" + encodeURIComponent(userLastName);
     console.log("sending data to server: ", data);
     fetch(SiteURL+'/users', {
         method: 'POST',
