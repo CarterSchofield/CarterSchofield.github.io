@@ -420,13 +420,16 @@ function loginUser(userEmail, userPassword){
         },
         body: data
     }).then(function(response) {
+        console.log("response: ", response)
+        loadAssignmentsFromServer
         if (response.status == 201){
             console.log("User logged in successfully");
-            loadAssignmentsFromServer();
+            assignmentList.style.display = "block";
             clearLoginInput();
             usersucessLogin();
             clearNavBar();
             clearLoginArea();
+
         } else{
             userFailedLogin();
             console.log("Error logging in user: ", userEmail, " responded with status code: ", response.status);
