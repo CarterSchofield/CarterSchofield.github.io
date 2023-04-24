@@ -108,6 +108,7 @@ function loadAssignmentsFromServer() {
             console.log("User is not logged in");
             addArea.style.display="none";
         }
+        addArea.style.display="flex";
         response.json().then(function(data){
         myAssignments = data;
         console.log("my list element:", assignmentList);
