@@ -52,10 +52,13 @@ function clearRegisterInput() {
     userLastNameInput.value = '';
 }
 
+function addAreaShow() {
+    addArea.style.display = "flex";
+}
+
 function loginScreenAppear() {
     loginArea.style.display = "block";
     registerArea.style.display = "none";
-    addArea.style.display = "none";
     userNotLoggedIn();
 }
 function cancelLogin() {
@@ -252,7 +255,7 @@ function loadAssignmentsFromServer() {
                 // Add the form to the page
                 newItem.appendChild(editForm);
             };
-            addArea.style.display = "flex";
+            addAreaSHow();
             clearNavBar()
             loginArea.style.display = "none";
             myAssignments = data;
