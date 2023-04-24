@@ -35,6 +35,8 @@ var myAssignments = [];
 userExists.style.display = "none";
 randomButton.style.display = "none";
 
+
+
 // Clear the assignment input fields
 function clearAssignmentInput() {
     assignmentNameInput.value = '';
@@ -51,34 +53,23 @@ function clearRegisterInput() {
     userLastNameInput.value = '';
 }
 
-function addAreaShow() {
-    addArea.style.display = "flex";
-}
-function addAreaNotShow(){
-    addArea.style.display = "none";
-}
-
 function loginScreenAppear() {
     loginArea.style.display = "block";
     registerArea.style.display = "none";
     userNotLoggedIn();
-    addAreaNotShow();
 }
 function cancelLogin() {
     loginArea.style.display = "none";
-    addAreaNotShow();
 }
 
 function registerScreenAppear() {
     registerArea.style.display = "block";
     loginArea.style.display = "none";
-    addAreaNotShow();
 }
 
 function cancelRegister() {
     registerArea.style.display = "none";
     userExists.style.display = "none";
-    addAreaNotShow();
 }
 
 function clearNavBar() {
@@ -113,6 +104,10 @@ function loadAssignmentsFromServer() {
     fetch(SiteURL+'/assignments', {
         credentials: 'include'
     }).then(function(response) {
+        if(response.status == 401) {
+            console.log("User is not logged in");
+            addArea.style.display="none";
+        }
         response.json().then(function(data){
         myAssignments = data;
         console.log("my list element:", assignmentList);
@@ -261,7 +256,6 @@ function loadAssignmentsFromServer() {
                 // Add the form to the page
                 newItem.appendChild(editForm);
             };
-            addAreaShow();
             clearNavBar()
             loginArea.style.display = "none";
             myAssignments = data;
@@ -339,9 +333,6 @@ function updateAssignmentOnServer(assignmentId, assignmentName, assignmentCourse
         }
     });
 }
-
-loadAssignmentsFromServer();
-
 
 function selectRandomAssignment() {
     if (myAssignments.length > 0) {
@@ -452,3 +443,5 @@ function usersucessLogin(){
 function userNotLoggedIn(){
     unsucessfulLogin.style.display = "none";
 }
+
+loadAssignmentsFromServer();
