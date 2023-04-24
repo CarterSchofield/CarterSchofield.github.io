@@ -425,6 +425,7 @@ function loginUser(userEmail, userPassword){
         if (response.status == 201){
             console.log("User logged in successfully");
             assignmentList.style.display = "block";
+            addArea.style.display="flex";
             clearLoginInput();
             usersucessLogin();
             clearNavBar();
