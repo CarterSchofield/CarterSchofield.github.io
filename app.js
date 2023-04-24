@@ -341,6 +341,7 @@ function updateAssignmentOnServer(assignmentId, assignmentName, assignmentCourse
 }
 
 loadAssignmentsFromServer();
+addAreaNotShow();
 
 function selectRandomAssignment() {
     if (myAssignments.length > 0) {
