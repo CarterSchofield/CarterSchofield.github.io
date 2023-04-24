@@ -35,6 +35,13 @@ var myAssignments = [];
 userExists.style.display = "none";
 randomButton.style.display = "none";
 
+window.onload = function () {
+    if (localStorage.getItem("hasCodeRunBefore") === null) {
+        addAreaNotShow();
+        localStorage.setItem("hasCodeRunBefore", true);
+    }
+}
+
 // Clear the assignment input fields
 function clearAssignmentInput() {
     assignmentNameInput.value = '';
@@ -341,7 +348,6 @@ function updateAssignmentOnServer(assignmentId, assignmentName, assignmentCourse
 }
 
 loadAssignmentsFromServer();
-addAreaNotShow();
 
 function selectRandomAssignment() {
     if (myAssignments.length > 0) {
