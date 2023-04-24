@@ -54,24 +54,31 @@ function clearRegisterInput() {
 function addAreaShow() {
     addArea.style.display = "flex";
 }
+function addAreaNotShow(){
+    addArea.style.display = "none";
+}
 
 function loginScreenAppear() {
     loginArea.style.display = "block";
     registerArea.style.display = "none";
     userNotLoggedIn();
+    addAreaNotShow();
 }
 function cancelLogin() {
     loginArea.style.display = "none";
+    addAreaNotShow();
 }
 
 function registerScreenAppear() {
     registerArea.style.display = "block";
     loginArea.style.display = "none";
+    addAreaNotShow();
 }
 
 function cancelRegister() {
     registerArea.style.display = "none";
     userExists.style.display = "none";
+    addAreaNotShow();
 }
 
 function clearNavBar() {
