@@ -281,7 +281,7 @@ function createAssignmentOnServer(assignmentName, assignmentCourse, assignmentET
         },
         body: data
     }).then(function(response) {
-        if (response.status == 200){
+        if (response.status == 201){
             console.log("Assignment created successfully");
             loadAssignmentsFromServer();
             clearAssignmentInput();
