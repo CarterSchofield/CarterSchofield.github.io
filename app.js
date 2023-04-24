@@ -55,7 +55,7 @@ function clearRegisterInput() {
 function loginScreenAppear() {
     loginArea.style.display = "block";
     registerArea.style.display = "none";
-    // addArea.style.display = "none";
+    addArea.style.display = "none";
     userNotLoggedIn();
 }
 function cancelLogin() {
@@ -266,10 +266,10 @@ function loadAssignmentsFromServer() {
 function createAssignmentOnServer(assignmentName, assignmentCourse, assignmentETC, assignmentDueDate, assignmentDueTime){
     console.log("Attempting to create a new assignment", assignmentName, "on the server");
     var data = "name=" + encodeURIComponent(assignmentName);
-    data += "&course= " + encodeURIComponent(assignmentCourse);
-    data += "&estimated_time_completion= " + encodeURIComponent(assignmentETC);
-    data += "&due_date= " + encodeURIComponent(assignmentDueDate);
-    data += "&due_time= " + encodeURIComponent(assignmentDueTime);
+    data += "&course=" + encodeURIComponent(assignmentCourse);
+    data += "&estimated_time_completion=" + encodeURIComponent(assignmentETC);
+    data += "&due_date=" + encodeURIComponent(assignmentDueDate);
+    data += "&due_time=" + encodeURIComponent(assignmentDueTime);
     console.log("sending data to server: ", data);
     fetch(SiteURL+'/assignments', {
         method: 'POST',
