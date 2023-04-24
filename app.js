@@ -35,15 +35,7 @@ var myAssignments = [];
 userExists.style.display = "none";
 randomButton.style.display = "none";
 
-var loggedIn = false;
 
-if (loggedIn == false) {
-    addAreaNotShow();
-    showNavBar();
-} else {
-    addAreaShow();
-    clearNavBar();
-}
 // Clear the assignment input fields
 function clearAssignmentInput() {
     assignmentNameInput.value = '';
@@ -351,8 +343,6 @@ function updateAssignmentOnServer(assignmentId, assignmentName, assignmentCourse
     });
 }
 
-loadAssignmentsFromServer();
-
 function selectRandomAssignment() {
     if (myAssignments.length > 0) {
         var randomIndex = Math.floor(Math.random() * myAssignments.length);
@@ -446,7 +436,7 @@ function loginUser(userEmail, userPassword){
             usersucessLogin();
             clearNavBar();
             clearLoginArea();
-            loggedIn = true;
+            addAreaShow();
         } else{
             userFailedLogin();
             console.log("Error logging in user: ", userEmail, " responded with status code: ", response.status);
@@ -463,3 +453,5 @@ function usersucessLogin(){
 function userNotLoggedIn(){
     unsucessfulLogin.style.display = "none";
 }
+
+loadAssignmentsFromServer();
