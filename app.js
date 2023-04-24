@@ -35,13 +35,15 @@ var myAssignments = [];
 userExists.style.display = "none";
 randomButton.style.display = "none";
 
-window.onload = function () {
-    if (localStorage.getItem("hasCodeRunBefore") === null) {
-        addAreaNotShow();
-        localStorage.setItem("hasCodeRunBefore", true);
-    }
-}
+var loggedIn = false;
 
+if (loggedIn == false) {
+    addAreaNotShow();
+    showNavBar();
+} else {
+    addAreaShow();
+    clearNavBar();
+}
 // Clear the assignment input fields
 function clearAssignmentInput() {
     assignmentNameInput.value = '';
@@ -99,6 +101,10 @@ function clearLoginArea() {
 function clearLoginInput(){
     userEmailInput.value = '';
     userPasswordInput.value = '';
+}
+
+function showNavBar() {
+    navBar.style.display = "block";
 }
 
 
@@ -268,8 +274,6 @@ function loadAssignmentsFromServer() {
                 // Add the form to the page
                 newItem.appendChild(editForm);
             };
-            addAreaShow();
-            clearNavBar()
             loginArea.style.display = "none";
             myAssignments = data;
             assignmentList.appendChild(newItem);
@@ -442,6 +446,7 @@ function loginUser(userEmail, userPassword){
             usersucessLogin();
             clearNavBar();
             clearLoginArea();
+            loggedIn = true;
         } else{
             userFailedLogin();
             console.log("Error logging in user: ", userEmail, " responded with status code: ", response.status);
