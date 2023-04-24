@@ -33,7 +33,6 @@ var navBar = document.querySelector('#nav-bar');
 var myAssignments = [];
 
 userExists.style.display = "none";
-addArea.style.display = "none";
 randomButton.style.display = "none";
 
 // Clear the assignment input fields
