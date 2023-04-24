@@ -254,7 +254,7 @@ function loadAssignmentsFromServer() {
                 // Add the form to the page
                 newItem.appendChild(editForm);
             };
-            addAreaSHow();
+            addAreaShow();
             clearNavBar()
             loginArea.style.display = "none";
             myAssignments = data;
