@@ -37,7 +37,11 @@ ul {
   margin: 20px 0;
   padding: 0;
 }
-  
+
+#assignemtn-list{
+  display:none;
+}
+
 #assignment-list li{
   background-color: white;
   border: 1px solid #ddd;
