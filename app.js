@@ -12,6 +12,7 @@ var assignmentList = document.querySelector('#assignment-list');
 var randomButton = document.querySelector('#random-button');
 var randomAssignmentList = document.querySelector('#random-assignment-list');
 var addButton = document.querySelector('#submit');
+
 var addArea = document.querySelector('#addArea'); 
 
 var loginButton = document.querySelector('#login-button');
