@@ -87,18 +87,12 @@ function clearLoginInput(){
 }
 function clearAddArea() {
     addArea.style.display = "none";
+    assignmentList.style.display = "none";
 }
 
 function showAddArea() {
     addArea.style.display = "flex";
-}
-
-function showAssignmentArea() {
     assignmentList.style.display = "block";
-}
-
-function clearAssignmentArea() {
-    assignmentList.style.display = "none";
 }
 
 // Event listener for the add button
@@ -120,7 +114,6 @@ function loadAssignmentsFromServer() {
         if(response.status == 401) {
             console.log("User is not logged in");
             clearAddArea();
-            clearAssignmentArea();
 
         }
         response.json().then(function(data){
@@ -272,7 +265,6 @@ function loadAssignmentsFromServer() {
                 newItem.appendChild(editForm);
             };
             showAddArea();
-            showAssignmentArea();
             clearNavBar();
             loginArea.style.display = "none";
             myAssignments = data;
@@ -441,13 +433,11 @@ function loginUser(userEmail, userPassword){
         loadAssignmentsFromServer
         if (response.status == 201){
             console.log("User logged in successfully");
-            showAssignmentArea();
             showAddArea();
             clearLoginInput();
             usersucessLogin();
             clearNavBar();
             clearLoginArea();
-
         } else{
             userFailedLogin();
             console.log("Error logging in user: ", userEmail, " responded with status code: ", response.status);
