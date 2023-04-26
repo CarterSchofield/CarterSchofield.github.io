@@ -114,8 +114,6 @@ randomButton.onclick = function (event) {
 
 // Load assignment from the server/database
 function loadAssignmentsFromServer() {
-    // Clear assignment list
-    assignmentList.innerHTML = '';
     fetch(SiteURL+'/assignments', {
         credentials: 'include'
     }).then(function(response) {
@@ -444,7 +442,6 @@ function loginUser(userEmail, userPassword){
         if (response.status == 201){
             console.log("User logged in successfully");
             showAssignmentArea();
-            assignmentList.style.display = "block";
             showAddArea();
             clearLoginInput();
             usersucessLogin();
