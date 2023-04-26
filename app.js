@@ -85,6 +85,13 @@ function clearLoginInput(){
     userEmailInput.value = '';
     userPasswordInput.value = '';
 }
+function clearAddArea() {
+    addArea.style.display = "none";
+}
+
+function showAddArea() {
+    addArea.style.display = "flex";
+}
 
 
 // Event listener for the add button
@@ -107,9 +114,9 @@ function loadAssignmentsFromServer() {
     }).then(function(response) {
         if(response.status == 401) {
             console.log("User is not logged in");
-            addArea.style.display="none";
+            clearAddArea();
         }
-        addArea.style.display="flex";
+        showAddArea();
         response.json().then(function(data){
         myAssignments = data;
         console.log("my list element:", assignmentList);
@@ -427,7 +434,7 @@ function loginUser(userEmail, userPassword){
         if (response.status == 201){
             console.log("User logged in successfully");
             assignmentList.style.display = "block";
-            addArea.style.display="flex";
+            showAddArea();
             clearLoginInput();
             usersucessLogin();
             clearNavBar();
